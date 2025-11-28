@@ -35,7 +35,7 @@ log = logging.getLogger("ytbot")
 # Env & config
 # -------------------------
 load_dotenv()
-BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8469554752:AAF1PoFLddzsgDHpB6LvvuiuidmpZULE1BE")
 MAX_UPLOAD_MB = int(os.getenv("MAX_UPLOAD_MB", "2000"))
 MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", "2"))
 ADMIN_IDS = {int(x) for x in os.getenv("ADMIN_IDS", "").split(",") if x.strip().isdigit()}
