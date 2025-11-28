@@ -1,5 +1,5 @@
 services:
-  - type: worker
+  - type: Web_Service
     name: ytbot
     env: python
     plan: starter
