@@ -1,3 +1,4 @@
+# Full bot code provided in chat; insert here.
 # bot.py
 import os
 import re
@@ -13,7 +14,7 @@ from telegram import (
     Update,
     InlineKeyboardMarkup,
     InlineKeyboardButton,
-    ChatAction,
+    ChatLocation,
 )
 from telegram.ext import (
     Application,
@@ -228,7 +229,7 @@ async def _download_background(app, uid: str, url: str, mode: str):
 # UI messages & handlers
 # -------------------------
 WELCOME = (
-    "👋 <b>Welcome</b>!\n\n"
+    "👋 <b>Welcome To Chota Bheem World</b>!\n\n"
     "Send a YouTube link (regular or Shorts). I will let you pick <b>Video (MP4)</b> or <b>Audio (MP3)</b>, "
     "show live progress, and upload the file if it is under the size limit."
 )
@@ -429,7 +430,7 @@ async def on_choice(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def _send_file(context: ContextTypes.DEFAULT_TYPE, chat_id: int, filepath: Path, mode: str, title: str):
     # Send typing action for better UX
     try:
-        await context.bot.send_chat_action(chat_id=chat_id, action=ChatAction.UPLOAD_DOCUMENT)
+        await context.bot.send_chat_action(chat_id=chat_id, action=ChatLocation.UPLOAD_DOCUMENT)
     except Exception:
         pass
 
